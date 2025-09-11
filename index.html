@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrong-Written Translater</title>
+
+    <link rel="icon" type="image/svg" sizes="32x32" href="img/translate-svgrepo-com.svg">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+    <div class="content">
+        <h1>its a <span>Wrong-Written</span> Translater</h1>
+        <div class="language-selection">
+        <div class="input-lang">
+            <span>Input:</span>
+            <button data-lang="ru">
+                <img src="img/russia.png" alt="RU" class="flag-icon">
+            </button>
+            <button data-lang="de">
+                <img src="img/germany.png" alt="DE" class="flag-icon">
+            </button>
+            <button data-lang="ua">
+                <img src="img/ukraine.png" alt="UA" class="flag-icon">
+            </button>
+            <button data-lang="en">
+                <img src="img/united-states.png" alt="EN" class="flag-icon">
+            </button>
+            
+            
+        </div>
+        
+        <div class="output-lang">
+            <span>Output:</span>
+            <button data-lang="ru">
+                <img src="img/russia.png" alt="RU" class="flag-icon">
+            </button>
+            <button data-lang="de">
+                <img src="img/germany.png" alt="DE" class="flag-icon">
+            </button>
+            <button data-lang="ua">
+                <img src="img/ukraine.png" alt="UA" class="flag-icon">
+            </button>
+            <button data-lang="en">
+                <img src="img/united-states.png" alt="EN" class="flag-icon">
+            </button>
+            
+        </div>
+        </div>
+
+        <textarea id="input-text" type="text" placeholder="Type your wrong-written text..."></textarea>
+
+
+        <textarea id="output-text" placeholder="Corrected text..." readonly></textarea>
+        
+
+    </div>
+    
+    </div>
+    <div class="about">
+        <h2>What is this program?</h2>
+        <p style="text-align: justify;">
+            This translator is designed for people who often type without noticing that the keyboard layout
+            is set incorrectly. For example, you want to write in Russian but accidentally type in English —
+            the program automatically fixes your “wrong-written” text.
+        </p>
+        
+        <h2>Who is it for?</h2>
+        <p style="text-align: justify;">
+            • Students and learners who type fast and don’t want to waste time switching layouts.<br>
+            • Developers and office workers who constantly switch between languages.<br>
+            • Anyone who wants to type quickly and correctly, even if the keyboard layout is wrong.
+        </p>
+        
+        <p style="text-align: justify;">
+            Just choose <b>Input</b> (the layout you accidentally typed in) and <b>Output</b> (the layout you need),
+            and the program will instantly convert your text.
+        </p>
+    </div>
+
+    <div class="myself">
+        <div class="first">
+            <img src="img/photo.JPG" alt="myself">
+        </div>
+        <div class="first">
+            <h1>Kyrylo Yurchenko</h1>
+            <p>Web Developer</p>
+            <p>Man who created it</p>
+            <p>📧 kyrylo.yurchenkoo@gmail.com</p>
+            <p>💼 <a href="https://kyrylostyle.github.io/Portfolio/">Portfolio</a></p>
+        </div>
+        
+
+    </div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
