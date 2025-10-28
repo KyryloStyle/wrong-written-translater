@@ -6,7 +6,7 @@ For example, if you accidentally type *“Ghbdtn”* instead of *“Hello”* be
 ---
 
 ## 🚀 Live Demo
-👉 [Try it here](https://kyrylostyle.github.io/Translater/)  
+👉 [Try it here](https://kyrylostyle.github.io/wrong-written-translater/)  
 
 ---
 
@@ -94,3 +94,4 @@ You can run the app locally without any setup — it’s pure HTML/CSS/JS.
 Frontend Developer & Software Engineer  
 📍 Based in Germany  
 🌐 [Portfolio](https://kyrylostyle.github.io/portfolio/) | 💼 [LinkedIn](https://www.linkedin.com/in/kyrylo-yurchenko/) | 📧 kyrylo.yurchenkoo@gmail.com
+
