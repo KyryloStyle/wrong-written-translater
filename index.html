@@ -1,106 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wrong-Written Translater</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wrong-Written Translator</title>
+  <meta name="description" content="Instantly fix text typed in the wrong keyboard layout — Russian, Ukrainian, German, and English.">
 
-    <link rel="icon" type="image/svg" sizes="32x32" href="img/translate-svgrepo-com.svg">
+  <link rel="icon" type="image/svg+xml" href="img/translate-svgrepo-com.svg">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
-    
-        <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main">
-    <div class="content">
-        <h1>its a <span>Wrong-Written</span> Translater</h1>
-        <div class="language-selection">
-        <div class="input-lang">
-            <span>Input:</span>
-            <button data-lang="ru">
-                <img src="img/russia.png" alt="RU" class="flag-icon">
-            </button>
-            <button data-lang="de">
-                <img src="img/germany.png" alt="DE" class="flag-icon">
-            </button>
-            <button data-lang="ua">
-                <img src="img/ukraine.png" alt="UA" class="flag-icon">
-            </button>
-            <button data-lang="en">
-                <img src="img/united-states.png" alt="EN" class="flag-icon">
-            </button>
-            
-            
-        </div>
-        
-        <div class="output-lang">
-            <span>Output:</span>
-            <button data-lang="ru">
-                <img src="img/russia.png" alt="RU" class="flag-icon">
-            </button>
-            <button data-lang="de">
-                <img src="img/germany.png" alt="DE" class="flag-icon">
-            </button>
-            <button data-lang="ua">
-                <img src="img/ukraine.png" alt="UA" class="flag-icon">
-            </button>
-            <button data-lang="en">
-                <img src="img/united-states.png" alt="EN" class="flag-icon">
-            </button>
-            
-        </div>
-        </div>
 
-        <textarea id="input-text" type="text" placeholder="Type your wrong-written text..."></textarea>
+  <!-- ─── Hero ──────────────────────────────────────────────────────────────── -->
+  <main class="hero">
+    <div class="container">
 
-
-        <textarea id="output-text" placeholder="Corrected text..." readonly></textarea>
-        
-
-    </div>
-    
-    </div>
-    <div class="about">
-        <h2>What is this program?</h2>
-        <p style="text-align: justify;">
-            This translator is designed for people who often type without noticing that the keyboard layout
-            is set incorrectly. For example, you want to write in Russian but accidentally type in English —
-            the program automatically fixes your “wrong-written” text.
+      <div class="hero-text">
+        <div class="hero-badge">Keyboard Layout Converter</div>
+        <h1>Fix your <span class="gradient-text">wrong-written</span> text</h1>
+        <p class="hero-subtitle">
+          Typed in the wrong layout? Paste it in, pick your layouts, done.
+          Supports Russian, Ukrainian, German &amp; English.
         </p>
-        
-        <h2>Who is it for?</h2>
-        <p style="text-align: justify;">
-            • Students and learners who type fast and don’t want to waste time switching layouts.<br>
-            • Developers and office workers who constantly switch between languages.<br>
-            • Anyone who wants to type quickly and correctly, even if the keyboard layout is wrong.
-        </p>
-        
-        <p style="text-align: justify;">
-            Just choose <b>Input</b> (the layout you accidentally typed in) and <b>Output</b> (the layout you need),
-            and the program will instantly convert your text.
-        </p>
-    </div>
+      </div>
 
-    <div class="myself">
-        <div class="first">
-            <img src="img/photo.JPG" alt="myself">
+      <!-- Translator card -->
+      <div class="translator-card" role="region" aria-label="Keyboard layout translator">
+        <div class="translator-grid">
+
+          <!-- Input side -->
+          <div class="t-side t-side--input">
+            <div class="t-header">
+              <span class="t-label">Input layout</span>
+              <div class="lang-group input-lang" role="group" aria-labelledby="input-lang-label">
+                <span id="input-lang-label" class="sr-only">Select input keyboard layout</span>
+                <button class="lang-btn" data-lang="ru" aria-pressed="true" aria-label="Russian layout">
+                  <img src="img/russia.png" alt="" class="flag-icon">
+                  <span class="lang-code">RU</span>
+                </button>
+                <button class="lang-btn" data-lang="de" aria-pressed="false" aria-label="German layout">
+                  <img src="img/germany.png" alt="" class="flag-icon">
+                  <span class="lang-code">DE</span>
+                </button>
+                <button class="lang-btn" data-lang="ua" aria-pressed="false" aria-label="Ukrainian layout">
+                  <img src="img/ukraine.png" alt="" class="flag-icon">
+                  <span class="lang-code">UA</span>
+                </button>
+                <button class="lang-btn" data-lang="en" aria-pressed="false" aria-label="English layout">
+                  <img src="img/united-states.png" alt="" class="flag-icon">
+                  <span class="lang-code">EN</span>
+                </button>
+              </div>
+            </div>
+
+            <label for="input-text" class="sr-only">Text typed in wrong keyboard layout</label>
+            <textarea
+              id="input-text"
+              placeholder="Paste or type your wrong-written text here…"
+              aria-describedby="char-counter"
+              spellcheck="false"
+              autocomplete="off"
+            ></textarea>
+
+            <div class="t-footer">
+              <span id="char-counter" class="char-counter" aria-live="polite" aria-atomic="true">0 characters</span>
+            </div>
+          </div>
+
+          <!-- Swap divider -->
+          <div class="t-divider" aria-hidden="true">
+            <button id="swap-btn" class="swap-btn" aria-label="Swap input and output layouts" title="Swap layouts">
+              ⇄
+            </button>
+          </div>
+
+          <!-- Output side -->
+          <div class="t-side t-side--output">
+            <div class="t-header">
+              <span class="t-label">Output layout</span>
+              <div class="lang-group output-lang" role="group" aria-labelledby="output-lang-label">
+                <span id="output-lang-label" class="sr-only">Select output keyboard layout</span>
+                <button class="lang-btn" data-lang="ru" aria-pressed="false" aria-label="Russian layout">
+                  <img src="img/russia.png" alt="" class="flag-icon">
+                  <span class="lang-code">RU</span>
+                </button>
+                <button class="lang-btn" data-lang="de" aria-pressed="false" aria-label="German layout">
+                  <img src="img/germany.png" alt="" class="flag-icon">
+                  <span class="lang-code">DE</span>
+                </button>
+                <button class="lang-btn" data-lang="ua" aria-pressed="false" aria-label="Ukrainian layout">
+                  <img src="img/ukraine.png" alt="" class="flag-icon">
+                  <span class="lang-code">UA</span>
+                </button>
+                <button class="lang-btn" data-lang="en" aria-pressed="true" aria-label="English layout">
+                  <img src="img/united-states.png" alt="" class="flag-icon">
+                  <span class="lang-code">EN</span>
+                </button>
+              </div>
+            </div>
+
+            <label for="output-text" class="sr-only">Converted text output</label>
+            <textarea
+              id="output-text"
+              placeholder="Converted text will appear here…"
+              readonly
+              aria-label="Converted text output"
+            ></textarea>
+
+            <div class="t-footer t-footer--output">
+              <button id="copy-btn" class="copy-btn" aria-label="Copy converted text to clipboard" title="Copy to clipboard" disabled>
+                <span class="copy-btn__icon" aria-hidden="true">⎘</span>
+                <span class="copy-btn__label">Copy</span>
+              </button>
+            </div>
+          </div>
+
         </div>
-        <div class="first">
-            <h1>Kyrylo Yurchenko</h1>
-            <p>Web Developer</p>
-            <p>Man who created it</p>
-            <p>📧 kyrylo.yurchenkoo@gmail.com</p>
-            <p>💼 <a href="https://kyrylostyle.github.io/Portfolio/">Portfolio</a></p>
-        </div>
-        
+      </div><!-- /translator-card -->
 
     </div>
+  </main>
 
+  <!-- ─── About ─────────────────────────────────────────────────────────────── -->
+  <section class="about" aria-labelledby="about-heading">
+    <div class="container">
 
-<script src="script.js"></script>
+      <div class="section-header">
+        <h2 id="about-heading">How it works</h2>
+        <p class="section-subtitle">
+          Every keyboard layout maps the same physical keys to different characters.
+          This tool uses those maps to find which key you pressed and output the character
+          that key produces in the layout you actually intended.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⌨️</div>
+          <h3>Pick your layouts</h3>
+          <p>Select the layout you accidentally typed in and the layout you meant to use.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⚡</div>
+          <h3>Instant conversion</h3>
+          <p>Text converts as you type — no button press needed. Just paste and it's done.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📋</div>
+          <h3>Copy &amp; go</h3>
+          <p>Hit Copy, paste your corrected text wherever you need it, and move on.</p>
+        </div>
+      </div>
+
+      <div class="example-block" aria-label="Conversion example">
+        <div class="example-item">
+          <span class="example-label">You typed</span>
+          <code class="example-text">Ghbdtn</code>
+          <span class="example-meta">EN layout, meant RU</span>
+        </div>
+        <div class="example-arrow" aria-hidden="true">→</div>
+        <div class="example-item">
+          <span class="example-label">You get</span>
+          <code class="example-text example-text--result">Привет</code>
+          <span class="example-meta">Correct Russian</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Author footer ─────────────────────────────────────────────────────── -->
+  <footer class="author" role="contentinfo">
+    <div class="container">
+      <div class="author-inner">
+        <div class="author-photo">
+          <img src="img/photo.JPG" alt="Kyrylo Yurchenko, Frontend Developer">
+        </div>
+        <div class="author-info">
+          <p class="author-role">Built by</p>
+          <h2>Kyrylo Yurchenko</h2>
+          <p class="author-title">Frontend Developer &amp; Software Engineer · Germany</p>
+          <div class="author-links">
+            <a href="https://kyrylostyle.github.io/portfolio/" class="author-link">Portfolio</a>
+            <a href="https://www.linkedin.com/in/kyrylo-yurchenko/" class="author-link">LinkedIn</a>
+            <a href="mailto:kyrylo.yurchenkoo@gmail.com" class="author-link">Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
